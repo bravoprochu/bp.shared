@@ -29,6 +29,16 @@ namespace bp.shared.DateHelp
             return new DateTime(kwartalTemu.Year, kwartalTemu.Month, 1);
         }
 
+        public static DateRangeDTO DateRangeFixedHours(DateRangeDTO dateRange) {
+            var s = dateRange.DateStart;
+            var e = dateRange.DateEnd;
+            return new DateRangeDTO
+            {
+                DateStart = new DateTime(s.Year, s.Month, s.Day, 0, 0, 0).ToUniversalTime(),
+                DateEnd = new DateTime(e.Year, e.Month, e.Day, 23, 59, 59).ToUniversalTime()
+            };
+        }
+
         public static DateTime DateRangeDateTo(DateTime dateEnd)
         {
             return new DateTime(dateEnd.Year, dateEnd.Month, dateEnd.Day, 23, 59, 59);

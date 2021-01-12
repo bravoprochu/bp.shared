@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace bp.shared.DTO
 {
-
-
-
     public class ConfigurationDTO
     {
         public ConfigurationConnectionStringsDTO ConnectionStrings { get; set; }
@@ -32,5 +30,7 @@ namespace bp.shared.DTO
         public string ModifyBy { get; set; }
         public DateTime? ModifyDateTime { get; set; }
     }
+
+
 
 }
